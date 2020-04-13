@@ -43,7 +43,8 @@ All tags -> https://help.github.com/en/github/managing-your-work-on-github/linki
 *git add -A -> tudo
 *git reset "name of file" -> remove file from staging area
 *git reset -> remove everything from stagin area
-*git log -> hash of commit
+*git log -> hash of commit and all description
+*git log --stat-> show files altered
 *git clone <url> <path where to clone> -> "." copy all files, no extra dir
 *git remote -v -> information of repository ??
 *git branch -a -> branch information ??
@@ -91,6 +92,7 @@ git push origin --delete example
 
 *****Fix mistakes and rollback commits
 git checkout <file name> -> reset file
+git commit --amend -> adding now files to commit or change commit message ** Alterar coisas muda o hash do commit, fazer isso com commits que já foram para o repositório remoto pode zoar os repositórios das outras pessoas, evitar! (liberado para fazer antes de mandar para o remoto)
 
 
 
