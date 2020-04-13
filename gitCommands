@@ -104,7 +104,13 @@ git reset <commit hash> -> volta para o commit informado no hash e retorna todas
 
 git reset --hard <commit hash> -> volta para o commit informado no hash e deleta todas as alterações
 
-git clean -> remove all untracked files
+git clean -df -> remove all untracked files (-d for directories -f for files)
+
+git reflog -> mostra todos os logs, se fez cagada e deletou algum commit pelo reset --hard os dados ficam salvos no reflog por x dias, só fazer um git checkout <hash commit> e depois criar uma branch para esse commit ("git branch backup" por exemplo). precisa criar a branch pois as alterações não vão estar em branch nenhuma (detached head state)
+
+git revert <commit hash>-> need to revert commits but other people alredy have downloaded the commits you want to delete, since commits are alredy at the remote repository, you need to use this command to revert the commits without changing the commits history( changing commits history can lead to version problems). this command creates a new commit that reverts to the state of the commit hash on the command
+
+giff diff <commit hash1> <commit hash2> -> changes betwwen commits
 
 
 
