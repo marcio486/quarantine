@@ -6,3 +6,6 @@ Testing miscellaneous git commands
 
 adding closes tag
 adding closes tag
+
+
+create branch from local command line
