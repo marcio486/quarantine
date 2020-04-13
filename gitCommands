@@ -1,0 +1,105 @@
+Branching is the way to work on different versions of a repository at one time
+
+There's only one rule: anything in the master branch is always deployable.
+Because of this, it's extremely important that your new branch is created off of master when working on a feature or a fix.
+
+
+Git flow ->
+
+1.Create a branch
+When you create a branch in your project, you're creating an environment where you can try out new ideas
+
+2.Add commits
+Commits also create a transparent history of your work that others can follow to understand what you've done and why. Each commit has an associated commit message, which is a description explaining why a particular change was made. Furthermore, each commit is considered a separate unit of change. This lets you roll back changes if a bug is found, or if you decide to head in a different direction.
+By writing clear commit messages, you can make it easier for other people to follow along and provide feedback.
+
+3.Open a Pull Request
+You can open a Pull Request at any point during the development process: when you have little or no code but want to share some screenshots or general ideas, when you're stuck and need help or advice, or when you're ready for someone to review your work.
+
+4.Discuss and review your code
+You can also continue to push to your branch in light of discussion and feedback about your commits.
+*Depois que abriu o pull request a secção de comentários e duvidas sobre suas alterações ficam abertas para o resto do time com acesso ao repositório, é possível enviar alterações diretamente as branchs com pull requests abertos, como se fosse um commit normal.
+
+
+5.Deploy
+Once your pull request has been reviewed and the branch passes your tests, you can deploy your changes to verify them in production.
+*verify them in production?
+
+
+6.Merge
+Once merged, Pull Requests preserve a record of the historical changes to your code. Because they're searchable, they let anyone go back in time to understand why and how a decision was made.
+
+
+***3.1
+You can link a pull request to an issue to show that a fix is in progress and to automatically close the issue when the pull request is merged, with that link, collaborators can see that someone is working on the issue. 
+When you merge a linked pull request into the default branch of a repository, its linked issue is automatically closed.
+Na mensagem de commit e merge escreve "Closes #'nome da issue que vai virar um #"numero da issue""
+All tags -> https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue
+
+
+
+
+
+*git add -A -> tudo
+*git reset "name of file" -> remove file from staging area
+*git reset -> remove everything from stagin area
+*git log -> hash of commit
+*git clone <url> <path where to clone> -> "." copy all files, no extra dir
+*git remote -v -> information of repository ??
+*git branch -a -> branch information ??
+*git diff -> all changes
+*git pull origin master -> always pull before push to avoid conflicts (master of branchs)
+*git push origin master -> push to master
+
+***** branching on command line ->
+git branch <name of branch> -> creates local branch
+git checkout <name of branch> -> changes selected branch
+git push -u origin <branch name> -> fazendo isso uma vez o git vai associar os proximos git push e git pull a branch que você está, não precisa executar o commando com -u origin <branch name> toda vez (o -u que faz esse anexo>
+*já enviou a branch para o repositório remoto
+****
+
+****merge de branch
+* se está em um branch diferente da master, volte pra ela -> git checkout master
+git pull -> faz um pull antes pra garantir
+*git branch --merged -> retorna todas as branchs que já foram feitas merge
+git merge <branch name> -> merges branches
+git push origin master -> manda alterações já em merge para repositório remoto
+git branch -d <branch name> -> deleta a branch localmente
+git push origin --delete <branch name> -> deleta do repositório remoto
+
+
+
+
+**Complete command line workflow -> branch named example
+git branch example -> cria branch
+git checkout example -> vai para branch
+(realiza alterações)
+git status -> checa alterações
+git add -A -> adicionar todas as alterações (git add <file names> para aadicionar arquivos 1 a 1)
+git commit -m "mensagem detalhada do commit"
+git push -u origin example
+git checkout master
+git pull origin master
+git merge example
+git push origin master
+git branch -d example
+git push origin --delete example
+
+**Fork & Pull Model, shared repository model
+
+
+
+*****Fix mistakes and rollback commits
+
+
+
+
+
+
+
+
+
+
+
+
+
