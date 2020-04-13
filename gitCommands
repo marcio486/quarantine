@@ -90,6 +90,7 @@ git push origin --delete example
 
 
 *****Fix mistakes and rollback commits
+git checkout <file name> -> reset file
 
 
 
