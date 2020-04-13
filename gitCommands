@@ -1,3 +1,4 @@
+alteraçao que deve ir pro outro lugar blaaaablaaa
 Branching is the way to work on different versions of a repository at one time
 
 There's only one rule: anything in the master branch is always deployable.
@@ -94,6 +95,15 @@ git push origin --delete example
 git checkout <file name> -> reset file
 git commit --amend -> adding now files to commit or change commit message ** Alterar coisas muda o hash do commit, fazer isso com commits que já foram para o repositório remoto pode zoar os repositórios das outras pessoas, evitar! (liberado para fazer antes de mandar para o remoto)
 
+git cherry-pick <commit hash> -> creates now commit based on original, only creates another, does not delete source
+
+git reset --soft <commit hash> -> volta para o commit informado no hash e retorna todas as alterações ara a staging area
+
+git reset <commit hash> -> volta para o commit informado no hash e retorna todas as alterações para "not staged" ou "untracked fies"
+
+git reset --hard <commit hash> -> volta para o commit informado no hash e deleta todas as alterações
+
+git clean -> remove all untracked files
 
 
 
