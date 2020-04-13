@@ -97,6 +97,7 @@ git commit --amend -> adding now files to commit or change commit message ** Alt
 
 git cherry-pick <commit hash> -> creates now commit based on original, only creates another, does not delete source
 
+
 git reset --soft <commit hash> -> volta para o commit informado no hash e retorna todas as alterações ara a staging area
 
 git reset <commit hash> -> volta para o commit informado no hash e retorna todas as alterações para "not staged" ou "untracked fies"
@@ -104,6 +105,7 @@ git reset <commit hash> -> volta para o commit informado no hash e retorna todas
 git reset --hard <commit hash> -> volta para o commit informado no hash e deleta todas as alterações
 
 git clean -> remove all untracked files
+
 
 
 
