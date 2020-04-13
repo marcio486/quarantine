@@ -104,15 +104,11 @@ git reset <commit hash> -> volta para o commit informado no hash e retorna todas
 
 git reset --hard <commit hash> -> volta para o commit informado no hash e deleta todas as alterações
 
-git clean -df-> remove all untracked files (d for directories and f for files)
+git clean -> remove all untracked files
 
-******git reflog -> all commits, se fez cagada acidentalmente ( deu um reset hard sem querer) esse reflog mantem todas as alterações por x dias (não especificado no tutorial)
 
-git checkout <commit hash> -> Ao fazer esse processo você não vai estar em ennhuma branch específica, precisa criar uma para consolidar as alterações
 
-git revert <hash>-> não altera o history, volta as alterações e cria novos commits ( não alterar o history significa que não vai zoar com o repositório dos outros)
 
-git diff <hash> <hash2> -> diferença entre dois commits 
 
 
 
