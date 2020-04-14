@@ -124,7 +124,7 @@ git stash pop -> faz pop no primeiro stash da lista ( retorna as alterações e 
 git stash drop stash@{0} -> deleta um stash específico
 
 git stash clear -> deleta tudo os stash
-
+124
 
 
 
