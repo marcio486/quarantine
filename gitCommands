@@ -1,4 +1,4 @@
-1234
+
 Branching is the way to work on different versions of a repository at one time
 
 There's only one rule: anything in the master branch is always deployable.
@@ -124,15 +124,47 @@ git stash pop -> faz pop no primeiro stash da lista ( retorna as alterações e 
 git stash drop stash@{0} -> deleta um stash específico
 
 git stash clear -> deleta tudo os stash
-123
 
 
+****diffmerge ->
+git config --global diff.tool diffmerge
+git config --global difftool.diffmerge.cmd "/usr/bin/diffmerge \"\$LOCAL\" \"\$REMOTE\""
 
+git config --global merge.tool diffmerge
+git config --global mergetool.diffmerge.trustExitCode true
+git config --global mergetool.diffmerge.cmd  "/usr/bin/diffmerge --merge --result=\"\$MERGED\"  \"\$LOCAL\" \"\$BASE\" \"\$REMOTE\""
 
+para utilizar ->
+git difftool
+git mergetool
 
+git rebase <branch name> -> joga os ultimos commits do parâmetro para a branch que se está trabalhando , EX: cria branch "Falcatrua" baseada na master, faz aletarações na branch "Falcatrua", outra pessoa estava trabalhando na master, realizou alterações e mandou o commit, agora é como se a branch "Falcatrua" estivesse um commit atrasado na master, para facilitar a vida e evitar problemas faz um rebase, isso vai fazer com que o ultimo commit da master venha para essa branch, workflow ->
 
+Master(commits 1,2,3) -> create branch "falcatruas" (commits 1,2,3) -> realiza alterações e commita na branch falcatruas (commits 1,2,3,1.F) -> alguem trabalhando na master à atualiza com outro commit (commits 1,2,3,4) -> faz um rebase na branch "falcatruas" o que gera (commmits 1,2,3,4,1.F)
 
+git merge:
+*  
+|\
+| *
+| |
+* *
+|/
+*
 
-
+git rebase:
+ 
+  *
+| |
+* * 
+|/
+*
+-> rebase 
+*
+|
+*
+|
+*
+|
+*
 
 
