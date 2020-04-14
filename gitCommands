@@ -113,6 +113,18 @@ git revert <commit hash>-> need to revert commits but other people alredy have d
 giff diff <commit hash1> <commit hash2> -> changes betwwen commits
 
 
+git stash save "message for stash" -> salva as alterações em um stash e retorna para o estado sem alterações 
+
+git stash list -> retorna todos os stashs
+
+git stash apply stash@{0} -> retorna as alterações salvas no stash porem NÃO EXCLUI O STASH
+
+git stash pop -> faz pop no primeiro stash da lista ( retorna as alterações e remove o stash)
+
+git stash drop stash@{0} -> deleta um stash específico
+
+git stash clear -> deleta tudo os stash
+
 
 
 
