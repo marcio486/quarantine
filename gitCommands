@@ -167,4 +167,31 @@ git rebase:
 |
 *
 
+commit 3151cff238323e32b0931147fa05292838474cad (HEAD -> master)
+Merge: 72b0470 0a10604
+Author: marcio486 <marscz@alunos.utfpr.edu.br>
+Date:   Tue Apr 14 15:41:49 2020 -0300
+
+    Merge branch 'branch-to-merge'
+    merge commit to check log history
+
+commit 0a1060476084dc9e7e98616a0bbd687b7e1b4182 (branch-to-merge)
+Author: marcio486 <marscz@alunos.utfpr.edu.br>
+Date:   Tue Apr 14 15:39:24 2020 -0300
+
+    adicionados x 2
+
+commit 26c8095b291de2f7817eb549786a77bbef038ab8
+Author: marcio486 <marscz@alunos.utfpr.edu.br>
+Date:   Tue Apr 14 15:39:08 2020 -0300
+
+    adicionados x 1
+
+commit 72b04707c238f6ab8730a3a7a8413aafdd9ad87c
+Author: marcio486 <marscz@alunos.utfpr.edu.br>
+Date:   Tue Apr 14 15:38:15 2020 -0300
+
+    second commit that is not on merge-branch
+
+
 
