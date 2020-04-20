@@ -1,0 +1,232 @@
+<Schedules>------------
+Launching something great that’s a little smaller in scope than
+planned is better than launching something mediocre and full
+of holes because you had to hit some magical time, budget, and
+scope window. Leave the magic to Houdini. You’ve got a real
+business to run and a real product to deliver.
+
+The ability to change is key. Having everything fixed
+makes it tough to change. Injecting scope flexibility
+will introduce options based on your real experience
+building the product. Flexibility is your friend.
+
+Nimble, agile, less-mass businesses can quickly change their
+entire business model, product, feature set, and marketing
+message. They can make mistakes and fix them quickly. They
+can change their priorities, product mix, and focus. And, most
+importantly, they can change their minds.
+
+The ability to
+change on a dime is one thing small teams have by default that
+big teams can never have. This is where the big guys envy the
+little guys. What might take a big team in a huge organization
+weeks to change may only take a day in a small, lean organization. That advantage is priceless. Cheap and fast changes are
+small’s secret weapon.
+<\Schedules>------------
+
+<Enemys>----------------
+Sometimes the best way to know what your app should be is
+to know what it shouldn’t be. Figure out your app’s enemy and
+you’ll shine a light on where you need to go.
+
+Persuading the consumer to switch is the same as persuading him to
+admit he was wrong. And people hate admitting that they’re wrong.
+Instead, you must tell a different story and persuade listeners that
+your story is more important than the story they currently believe.
+If your competition is faster, you must be cheaper. If they sell the
+story of health, you must sell the story of convenience
+
+* Subscribe to news feeds about your competitors
+<\Enemys>----------------
+
+<Design>-----------------
+In design, where meaning is often controversially subjective or
+painfully inscrutable, few things are more apparent and lucid than
+the presence of passion
+
+Simple rules, as with the birds simulation*, lead to complex behavior. Complex
+rules, as with the tax law in most countries, lead to stupid behavior
+
+I really got over the “get into details right away” attitude after I took some
+drawing classes...If you begin to draw the details right away you can be sure
+that the drawing is going to suck. In fact, you are completely missing the point
+
+In the beginning, make building a solid core product your
+priority instead of obsessing over scalability and server farms.
+Create a great app and then worry about what to do
+once it’s wildly successful.
+
+Take whatever you think your product should be and cut it in
+half. Pare features down until you’re left with only the most essential ones. Then do it again.
+
+Most of the time you spend is wasted on things that just don’t
+matter. If you can cut out the work and thinking that just don’t
+matter, you’ll achieve productivity you’ve never imagined.
+
+Steve Jobs said, “Wait wait – put your hands down. Listen: I know you
+have a thousand ideas for all the cool features iTunes could have. So do we. But
+we don’t want a thousand features. That would be ugly. Innovation is not about
+saying yes to everything. It’s about saying NO to all but the most crucial features.”
+
+Before you know it, a simple idea can snowball into a major headache.
+
+For every new feature you need to...
+1. Say no.
+2. Force the feature to prove its value.
+3. If “no” again, end here. If “yes,” continue...
+4. Sketch the screen(s)/ui.
+5. Design the screen(s)/ui.
+6. Code it.
+7-15. Test, tweak, test, tweak, test, tweak, test, tweak...
+16. Check to see if help text needs to be modified.
+17. Update the product tour (if necessary).
+18. Update the marketing copy (if necessary).
+19. Update the terms of service (if necessary).
+20. Check to see if any promises were broken.
+21. Check to see if pricing structure is affected.
+22. Launch.
+23. Hold breath.
+
+Accept that decisions are temporary. Accept that mistakes will
+happen and realize it’s no big deal as long as you can correct
+them quickly
+<\Desing>----------------
+
+<Implementation>
+Get something real up and running quickly
+Running software is the best way to build momentum, rally
+your team, and flush out ideas that don’t work. It should be your
+number one priority from day one.
+
+** Go from brainstorm to sketches to HTML to coding
+
+No matter how much you
+plan you’re likely to get half wrong anyway. So don’t do the
+“paralyis through analysis” thing. That only slows progress and
+saps morale.
+
+Test your app via real world usage
+
+Smaller tasks and smaller timelines are more manageable, hide fewer possible
+requirement misunderstandings, and cost less to change your mind about or redo. Smaller timelines keep developers engaged and give them more opportunities
+to enjoy a sense of accomplishment and less reason to think, “Oh I’ve got plenty
+of time to do that. For now, let me finish rating songs in my iTunes library.”
+
+*Design the interface before you start programming
+
+Each time you increase the amount of code, your software grows exponentially
+more complicated
+
+Avoiding functional specs is a good start but don’t stop there;
+Prevent excess paperwork everywhere. Unless a document is
+actually going to morph into something real, don’t produce it.
+
+Don’t wait for your product to reach perfection. It’s not gonna
+happen. Take responsibility for what you’re releasing. Put it out
+and call it a release. Otherwise, you’re just making excuses.
+
+Prioritize your bugs. How many people are affected? How bad is
+the problem? Does this bug deserve immediate attention or can
+it wait? What can you do right now that will have the greatest
+impact for the greatest number of people? Often times adding
+a new feature may even be more important to your app than
+fixing an existing bug.
+
+Don’t inf late just for the sake of inf lating. That’s how apps
+get bloated.
+
+Be open to new paths and changes in direction
+<\Implementation>
+
+<Vision>-----------------
+Before you start designing or coding anything you need
+to know the purpose of your product – the vision. Think
+big. Why does it exist? What makes it different than other
+similar products?
+This vision will guide your decisions and keep you on a consistent path. Whenever there’s a sticking point, ask, “Are we
+staying true to the vision?”
+<\Vision>-----------------
+
+
+<Costumers>
+* Create a blog 
+
+* Pick your domain name and put up a logo and maybe a sentence or
+two that describes, or at least hints at, what your app will do.
+Then let people give you their email address. Now you’re on
+your way to having a foundation of folks ready and waiting to
+be notified of your launch
+
+* How can a small team of just three developers create an innovative product and
+successfully compete with the big guys? The answer is to enlist an army of many
+The way to compete with the big guys is by
+starting small and paying attention to every one of your customers.
+
+* If something goes wrong, tell people. Even if they never saw it
+in the first place
+
+* It may sound strange, but the best-case scenario is when the company
+itself reports the bad news. This is proactive and prevents your
+company from being put in a weakened, defensive position.
+
+*  Don’t sweat sounding small. Revel
+in the fact that you can talk to customers like a friend.
+
+* Private betas are fine, public betas are bullshit. If it’s not
+good enough for public consumption don’t give it to the public
+to consume.
+
+Also, remember that negative reactions are almost always louder
+and more passionate than positive ones. In fact, you may only
+hear negative voices even when the majority of your base is
+happy about a change
+<\Costumers>
+
+
+<Phrases>-----------------
+* How does a project get to be a year behind schedule? One day at a time.
+ 
+* Being small can actually be a huge advantage, especially when it comes to communication.
+
+* Work from large to small. Always.
+
+* It’s a Problem When It’s a Problem
+
+* If you try to please everyone, you won’t please anyone
+
+* Build something you can manage
+
+**** Build software for general concepts and encourage people to create their own solutions
+
+* Ask people what they don’t want
+
+* [Innovation] comes from saying no to 1,000 things to make sure we
+don’t get on the wrong track or try to do too much. We’re always
+thinking about new markets we could enter, but it’s only by saying no
+that you can concentrate on the things that are really important.
+
+* Get It Working asap
+
+**** The alone time zone is where the real development magic happens.
+
+* Go for quick learning generalists over ingrained specialists
+
+* If programmers got paid to remove code from sofware instead of
+writing new code, software would be a whole lot better.
+
+<\Phrases>----------------
+
+
+
+It’s worth reemphasizing the one thing that we think is the most
+important ingredient when it comes to building a successful web
+app: the people involved
+
+You need people who are passionate about what they do. People
+who care about their craft – and actually think of it as a craft.
+People who take pride in their work, regardless of the monetary reward involved. People who sweat the details even if
+95% of folks don’t know the difference. People who want to
+build something great and won’t settle for less. People who need
+people. ok, not really that last one but we couldn’t resist throwing a little Streisand into the mix. Anyhow, when you find those
+people, hold onto them. In the end, the folks on your team will
+make or break your project – and your company

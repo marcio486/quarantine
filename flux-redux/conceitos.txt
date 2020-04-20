@@ -1,0 +1,22 @@
+
+variáveis de estado são armazenadas em apenas 1 lugar
+reducer -> unico lugar que altera os estados (actionListener) (Não faz nada alem de alterar os dados (não adiciona em banco/ não faz chamada em api/ não processa dados/etc...))
+Cada reducer está conectado com uma funcionalidade do projeto (?) EX: Lista de coisas a fazer, actions : Adicionar_ToDo,Remover_ToDo,Alterar_ToDo
+Após alteração, o reducer gera um novo estado para a aplicação ( estados são imutáveis)
+
+Fluxo 
+-> Alteração na camada View (HTML) 
+-> Action Objeto que indica ao redux o que fazer(EX: Adicionar_ToDo) 
+-> Middlewares (manipulação/formatações gerais na action EX: alterar node do ToDo a ser adicionado) 
+-> Reducer Altera o estado a aplicação ( só o reducer faz isso EX: adiciona ToDo na lista) 
+-> ReducerState Cria novo estado com as alterações ( estado é imutável)
+
+
+
+Exemplo possui dois componentes em lugares diferentes que são atualizados pelo mesmo state
+
+
+
+yarn create react-app flux-app
+yarn add redux
+yarn add react-redux

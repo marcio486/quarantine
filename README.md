@@ -1,11 +1,9 @@
 # hello-world
-Testing miscellaneous git commands
+Git
+Testing git commands
+Getting Real
+sumarization of getting real book
+flux-redux
+React.js project using flux architecture
 
 
-42
-
-adding closes tag
-adding closes tag
-
-
-create branch from local command line
