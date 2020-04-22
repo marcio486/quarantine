@@ -1,0 +1,74 @@
+Docker overview
+Application needing webserver using node.js, mongoDB database, messaging system, orchestration tool -> 
+Compatibility with underling libraryes,OS,hardware infrastructure is an issue, everytime something change(new library, new technology used) you need to check the whole system for compatibilty issues ( Compatibility issue usualy named "THE MATRIX FROM HELL" hehe). New developers/machines need a lot of work to set up the enviroment (life is easy now).
+Docker allows you to run each technology on a differente container with its own libraries and dependencies.
+Containers are old stuff, hard to set up. docker offers a high level interface to simplify it
+* Docker uses the base Kernel, EX: using ubuntu you can run docker with other distributions of linux, debian, fedora, cent.os, etc.. ( windows base container wont run a windows machine) ( linux docker running on windows uses underling  linux VM)
+
+Containers are not ment to host an operating system
+Once the task is complete, the conteiner exits. EX: the web service inside de container stops or crasher, the conteiner exits
+Docker hub has all version specified for each package
+By default, docker container does not listen to a STDIN
+Commands ->
+
+docker run <name:version> -> if <name> is not on your system, docker will go to docker hub and find a image with that name, download it and run it (version tag download specific version, if none given default = latest)
+
+docker run <name> <command> -> run the container with the specified command after, EX: docker run ubuntu exist immediately. docker run ubuntu sleep 5 will run the sleep command and exit after
+
+docker run -d <name or id> -> -d flag runs docker instance on backgroud, making the console avaliable
+
+docker run -i <name or id> -> -i flag sets STDIN
+
+docker run -it <name or id> -> -t flag sets STDIN and terminal messages
+
+docker run -p 333:5000 <name or id> -> -p flag maps the docker port to the docker host port, in this case an application running in docker on port 5000 will be avaliable on the docker host via port 333 ( you can run multiple of the same applications on different ports, docker run 334:5000 would open the same application on a different port) 
+
+docker run -v /opt/datadir:/var/lib/mysql mysql -> runs mysql instance and the data stored inside de container at /var/lib/mysql will be mapped to /opt/datadir
+
+docker run -e <env_variable> = <value> <name or id of docker> -> sets enviroment variables to docker
+
+docker attach <docker running ID> -> attach the container to the console
+*run commands in docker running instance->
+sudo docker run ubuntu sleep 100 -> run ubuntu image and sleeps for 100 seconds ( if it is doing somethings it will not enter exit status)
+sudo docker exec focused_wing cat /etc/hosts -> list files in /etc/hosts for that container( focused_wing was the name on the test enviroment)
+
+docker ps -> list all running containers with some info about it
+docker ps -a -> list all containers that once ran
+docker stop <name or ID> -> stop docker container
+docker rm <name or ID> -> delete container
+docker images -> list of docker images avaliable
+docker rmi <name or id> -> remove image of container
+docker pull <name> -> just pulls the image, does not run it
+
+docker inspect <name or id> -> return all configurations of container
+docker logs <name or id> -> return all logs of specified container
+
+
+**How to create image!
+Create container using api_results file example->
+
+On a file named Dockerfile
+FROM ubuntu ##-> uses ubuntu as root image
+USER root   ##-> change user to root	
+RUN apt-get update -yq && apt-get install -yqq \git \python3 \python3-pip ## RUN runs commands like a terminal
+RUN pip3 install flask
+RUN pip3 install flask_cors
+RUN pip3 install flask_restful
+RUN pip3 install pandas
+RUN pip3 install numpy
+RUN pip3 install networkx
+RUN pip3 install WSGIserver
+RUN pip3 install sqlalchemy
+RUN pip3 install psycopg2-binary
+RUN pip3 install gevent
+RUN mkdir /home/api_results
+COPY . /home/api_results	##Copy all files on the directory docker build was ran to home/api_results inside the docker container
+ENTRYPOINT python3 /home/api_results/api_results.py ## what will be executed when docker runs
+
+then run 
+sudo docker build -t testdocker .
+
+
+
+
+
