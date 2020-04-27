@@ -1,0 +1,16 @@
+webapp:
+    image: testdocker
+    ports:
+        - 5000:5123
+    links:
+        - postgres
+webapp2:
+    image: testedocker2
+    ports:
+        - 5001:5124
+    links:
+        - postgres
+postgres:
+    image: bkp_awayzdb
+    ports:
+        - 5002:5432

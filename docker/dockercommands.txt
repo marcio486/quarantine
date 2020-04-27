@@ -48,7 +48,8 @@ docker logs <name or id> -> return all logs of specified container
 Create container using api_results file example->
 
 On a file named Dockerfile
-FROM ubuntu ##-> uses ubuntu as root image
+[INSTRUCTION] [argument]
+FROM ubuntu ##-> bases ubuntu as root image									
 USER root   ##-> change user to root	
 RUN apt-get update -yq && apt-get install -yqq \git \python3 \python3-pip ## RUN runs commands like a terminal
 RUN pip3 install flask
@@ -68,6 +69,104 @@ ENTRYPOINT python3 /home/api_results/api_results.py ## what will be executed whe
 then run 
 sudo docker build -t testdocker .
 
+Docker builds a image using layered architecture, each line of instruction creates a new layer in the docker image with just the changes from the last layer, so the layers from the last example would be
+Layer 1-> base Ubuntu layer. Layer 2-> Changes to root user . Layer 3/4 -> change in apt packages/ changes in pip packages(all pip3 runs should be in one line only) . Layer 5-> creates a directory . Layer 6-> copy source code to directory . Layer 7 -> set entrypoint 
+
+docker history <id or tag> -> shows all the commands executed/size of files upon creation of the docker file.
+
+All layers build are cached by docker, if anything fails, next time you run docker build it will start from that failure point. Same thing with adding newcommands 
+
+CMD vs ENTRYPOINT
+CMD executes, ENTRYPOINT executes and opens to parameters
+CMD <comand> -> overwrites
+ENTRYPOINT <command> -> appends
+setting commands to dockerfile ->
+FROM Ubuntu
+CMD sleep 5 (or CMD ["sleep","5"])
+docker build -t ubuntu-sleeper . -> create a docker container with the ubuntu image that sleeps por 5 seconds (default ubuntu container exits at start, becuse the default CMD at the dockerhub is bash, and since there is no avaliable terminal the container exists)
+so docker run ubuntu-sleeper would sleep for 5 seconds, but what if you wanted to sleep for 10 seconds.
+docker run ubuntu-spleeper sleep 10 -> would work, but that is overwriting the sleep 5 comand.
+
+setting entrypoint to dockerfile ->
+FROM Ubuntu
+ENTRYPOINT ["sleep"]
+docker build -t ubuntu-sleeper . -> creates a docker cointainer that waits for the parameter.
+docker run ubuntu-sleeper 10 -> would sleep for 10 seconds
+
+Use ENTRYPOINT with CMD for default values
+FROM ubuntu
+ENTRYPOINT ["sleep"]
+CMD ["5"]
+docker run ubuntu-sleeper -> sleeps 5 secs
+docker run ubuntu-sleepr 10 -> sleeps 10 secs
+
+Overwrite ENTRYPOINT -> EX: need to updta sleep to sleepTest
+docker run --entrypoint sleedTest ubuntu-sleeper 10 -> run the above container but changes the entrypoint to sleepTest
+
+Docker Networks ->
+docker run ubuntu -> every container has its own internal ip ( 172.17.xxx.xxx) and can communicate with other containers, to use it on the host you need to map the ports you need
+
+docker run ubuntu --network=host -> the cointainer network is not the host network, no need for port mapping
+
+docker run ubuntu --network=none -> has no acess to any other container, the container runs in a isolated network
+
+
+docker network create --driver bridge --subnet 182.18.0.0/16 custom-isolated-network
+sudo docker network ls -> check all docker network
+
+check docker network via docker inspect <name>
+
+**for internal connections between docker containers do not use the internal ip address of each, becuse there is no garantee that when the system reboots the ip adress will be the name, instead use the docker DNS (the name of the container)
+
+Create a new network named wp-mysql-network using the bridge driver. Allocate subnet 182.18.0.1/24. Configure Gateway 182.18.0.1
+docker network create --driver bridge --subnet 182.18.0.1/24 --gateway 182.18.0.1 wp-mysql-network
+
+*Where and how docker manages files within containers
+Docker uses cache for building images even with different dockerfiles
+
+After building, docker files are read_only. when running docker creates a new layer ( layered archittercture) that is read_write, if you modify any file that is within the docker read_only layers, docker will create a new file on that new read_write layer with the modifications you made (copy_write).
+To save the data ( EX: using docker as a database) you should create a volume inside the docker host and map it on the docker container.
+docker volume create data_volume
+docker run -v data_volume:/var/lib/mysql mysql (/var/lib/mysql is where mysql stores data by default)
+if you dont create the data volume and map it anyway docker will create the volume for you, EX: docker run -v data_volume_2:/var/lib/mysql mysql, data_volume_2 will be created automatically
+
+If you alredy have data, EX: data is on /data/mysql use the command * bind mounting
+docker run -v /data/mysql:/var/lib/mysql mysql to map the data inside that volume to the container
+
+*The above commands using -v are old, you should use --mount (why?)
+docker run --mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql
+
+**Docker links are past, old man
+*docker links -> you have 5 dockers, 1. Python Voting app to vote cat or dog 2. in-memory Redis Database 3. DataProcessing writen in .Net 4. Postgres database 5. result-app to show the results writin in node.js
+how to run all and link the together?
+docker run -d --name=redis redis
+docker run -d --name=db postgres:9.4
+docker run -d --name=vote -p 5000:80 --link redis:redis voting-app ( note the --link command, this will link the containers together, as the voting-app has a line that connects to the redis by name ( Redis(host="redis",db=0,socket_timeout = 5))
+docker run -d --name=result -p 5001:90 --link db:db result-app
+docker run -d --name=worker --link db:db --link redis:redis worker
+
+How to create a docker-compose.yml file from this comands?
+redis:
+    image:reis
+db:
+    image:postgres:9.4
+vote:
+    image:voting-app
+    ports:
+    - 5000:80
+    links:
+    - redis
+result:
+    image: result-app
+    ports:
+    - 5001:80
+    links:
+    -db
+worker:
+    image: worker
+    links:
+    -redis
+    -db
 
 
 
