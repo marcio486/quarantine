@@ -1,0 +1,69 @@
+. -> working directory
+.. -> parent directory
+pwd -> print working directory
+ls -> show all files in directory
+ls -a -> show all files including hidden files
+ls -l -> show all files in directory as long form ( sizes, permissions, etc...)
+cd -> change to directory
+mkdir <name>-> creates directory
+open <name> -> opens file with default (xdg-open <name)
+touch <name> -> creates file or updates last time it was acessed
+cp <file path> <copy path> -> copy files ( or rename) (-R for dirs)
+mv <name> -> moves file/dir
+rm <name> -> delete file (rm does not send files to thrash, so caution needed)(-R for dirs)(-F for forcing)
+
+** find ->
+find . -> finds all files on directory (even files in subdirs)
+find <name of dir> -> all files and directorys of directory
+find . -type d -> finds all directorys
+find . -type f -> finds all files
+find . -type f -name "test.txt" -> finds only files with name test.txt
+find . -type f -name "test*" -> find all files starting with test
+find . -type f -iname "test*" -> find all files iname is not case sensitive
+find . -type f -iname "*.py" -> find all .py files
+find . -type f -mmin -10 -> find all files modified in the last 10 minutes ( + sign would show files modified more than 10 minutes ago) ( combination of both works as well -> find . -type f -mmin +1 -mmin -10 betwwen 1 and 10 minutes)
+find . -type f -mtime -10 -> mtime = days
+*mmin mtime =  moficitation *amin atime = acess *cmin ctime = changed 
+find . -size +5M -> find all files over 5MB (k for kilo M for mega G for giga)
+find . -empty -> find all empty files
+find . -perm 777 -> all files with 777 permission
+find api_results_docker.tar -exec chown marcio:marcio {} + -> find file and change owner/group ({} placeholder + end command)
+find <name> -type d -exec chmod 775 {} + -> change permissions of all directorys
+find <name> -type f -exec chmod 664 {} + -> change permissions of all files
+find . -type f -name "*.jpg" -maxdepth 1 -> find all files .jpg from first directory( if there are .jpg files in subdirectorys they will not apear, only if you change the maxdepth value)
+find . -type f -name "*.jpg" -maxdepth 1 -exec rm {} + -> delete all files returned above
+
+**Grep -> global regular expression print
+grep "teste" teste.txt -> search for the string "teste" on that file
+grep -w "teste" teste.txt -> only returns whole words 
+grep -wi "teste" teste.txt -> case sensitive
+grep -win "teste" teste.txt -> line of where the match was found
+grep -win -B 4 "teste" teste.txt -> see 4 lines before match ( -B for before -A for after -C for before and after)
+grep -win "teste" ./* -> search for "teste" in all files of directory
+grep -win "teste" ./*.txt -> search for "teste" in all .txt files of directory
+grep -winr "teste" . -> -r serchs recursevly, if there are other folders inside the -r flag will serch in those as well
+grep -wirl "teste" . -> -l flag shows name of files that contains "test"
+grep -wirc "teste" . -> -c flag shows name of files that contains "test" and number of matchs on each file
+history | grep "git commit"  | grep "adicionado"-> shows all "git commit" commands (history = show de bola) then searchs again and find "adicionado on the set that has "git commands"
+
+**CURL (localhost:5001 has a simple webserver running on it)
+curl http://localhost:5001 -> returns the html/response of the url
+curl -i http://localhost:5001->  -i returns some more information
+curl -d "name=marcio" <host> -> -d sends post request
+curl -X PUT -d "name=marcio486" <host> -> sends put requests (UPDATE)
+curl -X DELETE <host> -> sends a delete requests
+if <host/secret> has a login page
+curl -u <login:password> <host/secret> -> sends login and password to host(?)
+curl -o test.jpg <host> -> downloads response and save to test.jpg
+curl -o commits.json <github route with commits as json> -> downloads response
+
+*rsync
+rsync <origin> <destiny> -> sincs two directorys
+rsync -r <origin> <destiny> -> sincs everything(sub folders included)
+rsync -av --dry-run <origin> <destiny> -v shows the files use --dry-run to test what will happen before execution the command
+rsync -zaP <origin> <user@remote machine ip:folder on remote machine> -> sends zipped file to remote machine
+
+**crontab
+
+
+
