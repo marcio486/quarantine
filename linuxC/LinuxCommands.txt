@@ -64,6 +64,17 @@ rsync -av --dry-run <origin> <destiny> -v shows the files use --dry-run to test 
 rsync -zaP <origin> <user@remote machine ip:folder on remote machine> -> sends zipped file to remote machine
 
 **crontab
+#* * * * * =  minute | hour | day of month | month | day of week
+#* * * * * echo 'Hello' >> /tmp/test.txt 
+#0 0 */3 * * -> once every 3 days
+#1 0 */3 * * -> every minute of every 3rd day
+#0 0-5 * * * -> every hour of every day between 0-5hrs
 
-
+**Customize terminal
+.bash_profile -> login shell
+.bashrc -> nonlogin shell
+source .bashrc -> rerun .bashrc
+$() -> seems to be a variable in bash
+bash files used inside the git repo
+.dot files -> dotfiles.github.io
 
