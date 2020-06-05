@@ -11,7 +11,10 @@ touch <name> -> creates file or updates last time it was acessed
 cp <file path> <copy path> -> copy files ( or rename) (-R for dirs)
 mv <name> -> moves file/dir
 rm <name> -> delete file (rm does not send files to thrash, so caution needed)(-R for dirs)(-F for forcing)
-
+locate <name of file>
+history -> history of commands
+whatis <command> -> short description
+apropos <command> -> lots of helps
 ** find ->
 find . -> finds all files on directory (even files in subdirs)
 find <name of dir> -> all files and directorys of directory
@@ -77,4 +80,26 @@ source .bashrc -> rerun .bashrc
 $() -> seems to be a variable in bash
 bash files used inside the git repo
 .dot files -> dotfiles.github.io
+
+
+
+
+
+Scripting
+#ip adresses                                                 
+#!/bin/bash
+
+if ["$1" == ""]
+then
+echo "Fucking piece of shit, forgot ip!"
+
+else
+for ip in `seq 254`; do
+ping -c 1 $1.$ip | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
+done
+fi
+
+##
+for ip in $(cat iplist.txt); do nmap -p 80 -T4 $ip & done
+
 
